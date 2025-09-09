@@ -1,10 +1,10 @@
 # MMetaTrader5
 
-Metatrader5 mock for macOS development.
+MetaTrader5 mock for Mac developers.
 
-This package provides a lightweight, dependency-free mock of the MetaTrader5 Python API so you can develop and test trading code on macOS (or any environment without MetaTrader5 installed). It mirrors common functions, constants, and data structures you typically use from the real MetaTrader5 package.
+This package provides a lightweight mock of the MetaTrader5 Python API so you can develop and test trading code on macOS (or any environment without MetaTrader5 installed). It mirrors common functions, constants, and data structures you typically use from the real MetaTrader5 package.
 
-Note: This is a mock intended for development and testing only. It does not execute real trades or connect to real brokers.
+⚠️ **Important**: This is a mock intended for development and testing only. It does not execute real trades or connect to real brokers.
 
 
 ## Features
@@ -17,11 +17,25 @@ Note: This is a mock intended for development and testing only. It does not exec
 
 ## Installation
 
-Install into your current environment from the local source:
+### From GitHub (Recommended)
+
+```bash
+pip install git+https://github.com/jgonzmoya/m_metatrader_5.git
+```
+
+### From Local Source
+
+```bash
+git clone https://github.com/jgonzmoya/m_metatrader_5.git
+cd m_metatrader_5
+pip install -e .
+```
+
+### Development Setup
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -U pip
 pip install -e .
 ```
@@ -123,8 +137,7 @@ The mock surfaces a subset of the MetaTrader5 interface used commonly in bots an
 - macOS primary target, but should work anywhere Python and numpy are available.
 
 Dependencies are declared in setup.py and include:
-- numpy (imported directly by the module)
-- requests (declared as a setup dependency)
+- numpy (required for structured arrays and random number generation)
 
 
 ## Development
@@ -146,15 +159,33 @@ except Exception:
 ```
 
 
-## Versioning
+## Project Info
 
-- Current version: 0.0.1
-- Status: Alpha
+- **Version**: 0.0.1
+- **Status**: Alpha (Development)
+- **Repository**: https://github.com/jgonzmoya/m_metatrader_5
+- **Author**: Javier Gonzalez Moya (javigonzmoya@gmail.com)
+- **License**: MIT
+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Guidelines
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Test your changes thoroughly
+5. Commit your changes (`git commit -m 'Add some amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
 
 ## License
 
-MIT License © Javier Gonzalez Moya
+MIT License © 2024 Javier Gonzalez Moya
 
 
 ## Acknowledgements
